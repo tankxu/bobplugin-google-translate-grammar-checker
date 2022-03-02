@@ -7,7 +7,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import nodePolyfills from 'rollup-plugin-polyfill-node';
 
-const pkg = 'google-translate.bobplugin';
+const pkg = 'google-translate-grammar-checker.bobplugin';
 
 export default {
   input: path.join(__dirname, './src/main.ts'),

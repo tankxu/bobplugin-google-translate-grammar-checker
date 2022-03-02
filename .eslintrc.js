@@ -41,7 +41,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-named-as-default-member': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'max-len': ['error', { ignoreComments: true, code: 120, ignoreStrings: true }],
+    'max-len': ['error', { ignoreComments: true, code: 130, ignoreStrings: true }],
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-var-requires': 'off',

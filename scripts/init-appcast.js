@@ -5,10 +5,10 @@ const package = require('../package.json');
 const plugInfo = require('../src/info.json');
 const plugAppcast = require('../src/appcast.json');
 
-const githubRelease = `https://github.fe.workers.dev/roojay520/bobplugin-google-translate/releases/download`;
+const githubRelease = `https://raw.githubusercontent.com/tankxu/bobplugin-google-translate-grammar-checker/releases/download`;
 
 module.exports = () => {
-  const pkgName = 'google-translate';
+  const pkgName = 'google-translate-grammar-checker';
   const pkgPath = path.resolve(__dirname, `../release/${pkgName}-v${plugInfo.version}.bobplugin`);
   const appcastPath = path.join(__dirname, '../src/appcast.json');
 
@@ -19,9 +19,9 @@ module.exports = () => {
 
   const version = {
     version: package.version,
-    desc: 'https://github.com/roojay520/bobplugin-google-translate/blob/master/CHANGELOG.md',
+    desc: 'https://github.com/tankxu/bobplugin-google-translate-grammar-checker/blob/master/CHANGELOG.md',
     sha256: hex,
-    url: `${githubRelease}/v${package.version}/google-translate-v${package.version}.bobplugin`,
+    url: `${githubRelease}/v${package.version}/google-translate-grammar-checker-v${package.version}.bobplugin`,
     minBobVersion: plugInfo.minBobVersion,
   };
 

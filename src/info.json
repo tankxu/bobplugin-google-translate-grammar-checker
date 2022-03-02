@@ -1,12 +1,12 @@
 {
-  "identifier": "com.roojay.bobplugin-google-translate",
+  "identifier": "com.tankxu.bobplugin-google-translate-grammar-checker",
   "category": "translate",
   "version": "0.5.0",
-  "name": "Google 翻译",
-  "summary": "Bob google 翻译插件",
-  "author": "roojay <roojay520@gmail.com>",
-  "appcast": "https://github-raw.fe.workers.dev/roojay520/bobplugin-google-translate/master/src/appcast.json",
-  "homepage": "https://github.com/roojay520/bobplugin-google-translate",
+  "name": "Google 语法检查",
+  "summary": "Bob google 语法检查插件",
+  "author": "tankxu",
+  "appcast": "https://raw.githubusercontent.com/tankxu/bobplugin-google-translate-grammar-checker/master/src/appcast.json",
+  "homepage": "https://github.com/tankxu/bobplugin-google-translate-grammar-checker",
   "icon": "114",
   "minBobVersion": "0.5.0",
   "options": [

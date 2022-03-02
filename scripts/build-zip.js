@@ -3,7 +3,7 @@ const AdmZip = require('adm-zip');
 const initAppcast = require('./init-appcast');
 const plugInfo = require('../src/info.json');
 
-const pkgName = 'google-translate';
+const pkgName = 'google-translate-grammar-checker';
 const pkg = path.resolve(__dirname, `../release/${pkgName}-v${plugInfo.version}.bobplugin`);
 
 const zip = new AdmZip();

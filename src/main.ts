@@ -11,7 +11,7 @@ export function supportLanguages(): Bob.supportLanguages {
 }
 
 // https://ripperhe.gitee.io/bob/#/plugin/quickstart/translate
-export function translate(query: Bob.TranslateQuery, completion: Bob.Completion) {
+function translateJob(query: Bob.TranslateQuery) {
   const { text = '', detectFrom, detectTo } = query;
   const str = formatString(text);
   const from = standardToNoStandard(detectFrom);
@@ -28,8 +28,33 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
     res = translateByWeb(str, params);
   }
 
-  res
-    .then((result) => completion({ result }))
+  return res;
+}
+
+export function translate(query: Bob.TranslateQuery, completion: Bob.Completion) {
+  Bob.api.$log.info(JSON.stringify(query));
+
+  translateJob(query)
+    .then((result) => {
+      // Bob.api.$log.info(JSON.stringify(result));
+
+      let queryReverse = query;
+      let fromLang = query.detectFrom;
+      let toLang = query.detectTo;
+      let reverseText = result.toParagraphs.join('\n');
+
+      queryReverse.detectFrom = toLang;
+      queryReverse.detectTo = fromLang;
+      queryReverse.text = reverseText;
+
+      // Bob.api.$log.info(JSON.stringify(queryReverse));
+
+      return translateJob(queryReverse);
+    })
+    .then((result) => {
+      // Bob.api.$log.info(JSON.stringify(result));
+      return completion({ result });
+    })
     .catch((error) => {
       Bob.api.$log.error(JSON.stringify(error));
       if (error?.type) return completion({ error });
